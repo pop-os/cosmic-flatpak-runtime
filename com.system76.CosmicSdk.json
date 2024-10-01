@@ -66,7 +66,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/pop-os/icon-theme.git",
-                    "commit": "3126c6a3f605923c648e74e7276b9de59d4ab67a"
+                    "tag": "v3.5.1"
                 }
             ]
         },
@@ -77,7 +77,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/pop-os/cosmic-icons.git",
-                    "commit": "341c84467fd863f0319cadf49b3d4bac1bf3029a"
+                    "tag": "epoch-1.0.0-alpha.2"
                 }
             ],
             "build-commands": [
