@@ -1,2 +1,2 @@
-# flatpak-cosmic
+# cosmic-flatpak-runtime
 COSMIC runtimes for flatpak applications
