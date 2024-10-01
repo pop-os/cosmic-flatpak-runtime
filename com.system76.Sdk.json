@@ -1,0 +1,88 @@
+{
+    "build-runtime": true,
+    "id": "com.system76.Sdk",
+    "id-platform": "com.system76.Platform",
+    "branch": "master",
+    "runtime": "org.freedesktop.Platform",
+    "sdk": "org.freedesktop.Sdk",
+    "runtime-version": "24.08",
+    "sdk-extensions": [
+        "org.freedesktop.Sdk.Debug",
+        "org.freedesktop.Sdk.Locale",
+        "org.freedesktop.Sdk.Docs"
+    ],
+    "platform-extensions": [
+        "org.freedesktop.Platform.Locale"
+    ],
+    "inherit-extensions": [
+        "org.freedesktop.Platform.GL",
+        "org.freedesktop.Platform.Timezones",
+        "org.freedesktop.Platform.Icontheme",
+        "org.freedesktop.Platform.VulkanLayer"
+    ],
+    "inherit-sdk-extensions": [
+        "org.freedesktop.Sdk.Extension"
+    ],
+    "finish-args": [
+        "--talk-name=com.system76.CosmicSettingsDaemon",
+        "--filesystem=xdg-config/cosmic:ro",
+        "--runtime=com.system76.Platform//master",
+        "--sdk=com.system76.Sdk//master"
+    ],
+    "modules": [
+        {
+            "name": "just",
+            "buildsystem": "simple",
+            "build-commands": [
+                "install -Dm0755 just /usr/bin/just"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "strip-components": 0,
+                    "dest-filename": "just.tar.gz",
+                    "url": "https://github.com/casey/just/releases/download/1.35.0/just-1.35.0-x86_64-unknown-linux-musl.tar.gz",
+                    "sha256": "c4172306e241bd175c07316156a610593fa2b687ac49418520a375605d7cead4",
+                    "only_arches": [
+                        "x86_64"
+                    ]
+                },
+                {
+                    "type": "archive",
+                    "strip-components": 0,
+                    "dest-filename": "just.tar.gz",
+                    "url": "https://github.com/casey/just/releases/download/1.35.0/just-1.35.0-aarch64-unknown-linux-musl.tar.gz",
+                    "sha256": "a94c75426239fce8c1e7fdfccd20d60d987924f91ac45c843a14cd72d4d71e73",
+                    "only_arches": [
+                        "aarch64"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "pop-icon-theme",
+            "buildsystem": "meson",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/pop-os/icon-theme.git",
+                    "commit": "3126c6a3f605923c648e74e7276b9de59d4ab67a"
+                }
+            ]
+        },
+        {
+            "name": "cosmic-icons",
+            "buildsystem": "simple",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/pop-os/cosmic-icons.git",
+                    "commit": "341c84467fd863f0319cadf49b3d4bac1bf3029a"
+                }
+            ],
+            "build-commands": [
+                "just install"
+            ]
+        }
+    ]
+}
