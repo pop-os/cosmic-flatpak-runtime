@@ -1,7 +1,7 @@
 {
     "build-runtime": true,
-    "id": "com.system76.Sdk",
-    "id-platform": "com.system76.Platform",
+    "id": "com.system76.CosmicSdk",
+    "id-platform": "com.system76.CosmicPlatform",
     "branch": "master",
     "runtime": "org.freedesktop.Platform",
     "sdk": "org.freedesktop.Sdk",
@@ -26,8 +26,8 @@
     "finish-args": [
         "--talk-name=com.system76.CosmicSettingsDaemon",
         "--filesystem=xdg-config/cosmic:ro",
-        "--runtime=com.system76.Platform//master",
-        "--sdk=com.system76.Sdk//master"
+        "--runtime=com.system76.CosmicPlatform//master",
+        "--sdk=com.system76.CosmicSdk//master"
     ],
     "modules": [
         {
