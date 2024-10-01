@@ -1,15 +1,40 @@
 {
-    "id": "com.system76.CosmicBaseApp",
+    "build-runtime": true,
+    "id": "com.system76.Cosmic.Sdk",
+    "id-platform": "com.system76.Cosmic.Platform",
+    "branch": "master",
     "runtime": "org.freedesktop.Platform",
     "sdk": "org.freedesktop.Sdk",
     "runtime-version": "24.08",
-    "separate-locales": false,
+    "sdk-extensions": [
+        "org.freedesktop.Sdk.Debug",
+        "org.freedesktop.Sdk.Locale",
+        "org.freedesktop.Sdk.Docs"
+    ],
+    "platform-extensions": [
+        "org.freedesktop.Platform.Locale"
+    ],
+    "inherit-extensions": [
+        "org.freedesktop.Platform.GL",
+        "org.freedesktop.Platform.Timezones",
+        "org.freedesktop.Platform.Icontheme",
+        "org.freedesktop.Platform.VulkanLayer"
+    ],
+    "inherit-sdk-extensions": [
+        "org.freedesktop.Sdk.Extension"
+    ],
+    "finish-args": [
+        "--talk-name=com.system76.CosmicSettingsDaemon",
+        "--filesystem=xdg-config/cosmic:ro",
+        "--runtime=com.system76.Cosmic.Platform//master",
+        "--sdk=com.system76.Cosmic.Sdk//master"
+    ],
     "modules": [
         {
             "name": "just",
             "buildsystem": "simple",
             "build-commands": [
-                "install -Dm0755 just /app/bin/just"
+                "install -Dm0755 just /usr/bin/just"
             ],
             "sources": [
                 {
@@ -39,9 +64,9 @@
             "buildsystem": "meson",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://github.com/pop-os/icon-theme/archive/refs/tags/v3.5.1.tar.gz",
-                    "sha256": "92e73f252e5e9c8a1124623a7d421410ef43c798a4a992955e6eb4f666f5c8a0"
+                    "type": "git",
+                    "url": "https://github.com/pop-os/icon-theme.git",
+                    "tag": "v3.5.1"
                 }
             ]
         },
@@ -50,13 +75,13 @@
             "buildsystem": "simple",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://github.com/pop-os/cosmic-icons/archive/refs/tags/epoch-1.0.0-alpha.2.tar.gz",
-                    "sha256": "d384c24f02186f7760af7c335c3b0be1d940668b9babad627d0dae1c5446314a"
+                    "type": "git",
+                    "url": "https://github.com/pop-os/cosmic-icons.git",
+                    "tag": "epoch-1.0.0-alpha.2"
                 }
             ],
             "build-commands": [
-                "just prefix=/app install"
+                "just install"
             ]
         }
     ]

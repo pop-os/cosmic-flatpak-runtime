@@ -1,4 +1,4 @@
-baseapp: com.system76.CosmicBaseApp.json
+baseapp: com.system76.Cosmic.BaseApp.json
 	flatpak-builder \
         --force-clean \
         --install-deps-from=flathub \
@@ -6,7 +6,7 @@ baseapp: com.system76.CosmicBaseApp.json
         --user \
         build/$@ $<
 
-sdk: com.system76.CosmicSdk.json
+sdk: com.system76.Cosmic.Sdk.json
 	flatpak-builder \
         --force-clean \
         --install-deps-from=flathub \
