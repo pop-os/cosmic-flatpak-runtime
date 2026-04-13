@@ -5,7 +5,7 @@
     "branch": "master",
     "runtime": "org.freedesktop.Platform",
     "sdk": "org.freedesktop.Sdk",
-    "runtime-version": "24.08",
+    "runtime-version": "25.08",
     "sdk-extensions": [
         "org.freedesktop.Sdk.Debug",
         "org.freedesktop.Sdk.Locale",
@@ -41,8 +41,8 @@
                     "type": "archive",
                     "strip-components": 0,
                     "dest-filename": "just.tar.gz",
-                    "url": "https://github.com/casey/just/releases/download/1.35.0/just-1.35.0-x86_64-unknown-linux-musl.tar.gz",
-                    "sha256": "c4172306e241bd175c07316156a610593fa2b687ac49418520a375605d7cead4",
+                    "url": "https://github.com/casey/just/releases/download/1.49.0/just-1.49.0-x86_64-unknown-linux-musl.tar.gz",
+                    "sha256": "05eb2f068b641b06e5b318796c2e27d4dcca608e65b34329a08c1b9f582611bd",
                     "only_arches": [
                         "x86_64"
                     ]
@@ -51,8 +51,8 @@
                     "type": "archive",
                     "strip-components": 0,
                     "dest-filename": "just.tar.gz",
-                    "url": "https://github.com/casey/just/releases/download/1.35.0/just-1.35.0-aarch64-unknown-linux-musl.tar.gz",
-                    "sha256": "a94c75426239fce8c1e7fdfccd20d60d987924f91ac45c843a14cd72d4d71e73",
+                    "url": "https://github.com/casey/just/releases/download/1.49.0/just-1.49.0-aarch64-unknown-linux-musl.tar.gz",
+                    "sha256": "993b78f51004248114af22368f69715541542b3c9941c80e02f8ae10eb404ae0",
                     "only_arches": [
                         "aarch64"
                     ]
@@ -77,7 +77,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/pop-os/cosmic-icons.git",
-                    "tag": "epoch-1.0.0-alpha.2"
+                    "tag": "epoch-1.0.9"
                 }
             ],
             "build-commands": [
